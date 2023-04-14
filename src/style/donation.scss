@@ -1,0 +1,118 @@
+.donation {
+  background: #f6f6f6;
+}
+
+.donation__wrapper {
+  max-width: 1280px;
+  margin: auto;
+  background: #f6f6f6;
+  padding: 80px 0 97px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.donation__image {
+  padding-top: 6px;
+}
+
+.donation__content {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.donation__span {
+  font-family: "Georgia";
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.donation__number {
+  max-width: 275px;
+  position: relative;
+  background: #f1cdb3;
+  border-radius: 9px;
+  padding: 10px 15px;
+  font-family: "Georgia";
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  padding: 10px 15px 10px 60px;
+}
+
+.donation__number:hover {
+  background-color: #fddcc4;
+}
+
+.donation__number:before {
+  content: "";
+  position: absolute;
+  background-image: url(/images/credit-card.svg);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 23px;
+  top: 10px;
+  left: 15px;
+}
+
+.donation__information {
+  font-style: italic;
+  font-size: 12px;
+  line-height: 18px;
+  color: #b2b2b2;
+}
+
+@media (max-width: 768px) {
+  .donation__wrapper {
+    padding: 80px 0 92px;
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+
+  .donation__image {
+    padding-top: 0px;
+  }
+}
+
+@media (max-width: 765px) {
+  .donation__photo {
+    width: 260px;
+    height: auto;
+  }
+}
+
+@media (max-width: 320px) {
+  .donation__wrapper {
+    padding: 42px 20px 35px;
+    gap: 44px;
+  }
+
+  .donation__content {
+    justify-content: center;
+    text-align: center;
+    line-height: 130%;
+    gap: 22px;
+    
+  }
+
+  .donation__span {
+    letter-spacing: 0;
+  }
+
+  .donation__number {
+    font-size: 15px;
+    line-height: 110%;
+    padding: 13px 15px 13px 58px;
+  }
+
+  .donation__information {
+    text-align: justify;
+  }
+
+}

@@ -1,0 +1,333 @@
+.friends {
+  background: #f6f6f6;
+}
+
+.friends__wrapper {
+  max-width: 1280px;
+  margin: auto;
+  padding: 83px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  position: relative;
+}
+
+.friends_title {
+  text-align: center;
+}
+
+.friends__sliderWrap { 
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.friends__slider {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.activeNext {
+  animation-name: move-next;
+  animation-duration: 0.5s;
+}
+
+@keyframes move-next {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-100%);
+    opacity: 0.4;
+  }
+}
+
+.activePrev {
+  animation-name: move-prev;
+  animation-duration: 0.5s;
+}
+
+@keyframes move-prev {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(100%);
+    opacity: 0.4;
+  }
+}
+
+.friends__list {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  gap: 90px;
+  transition: 1s;
+  transition-property: transform;
+  transition-duration: 400ms;
+}
+
+.friends__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 30px;
+  background: #fafafa;
+  position: relative;
+  z-index: 2;
+  border-radius: 9px 9px 0px 0px;
+  transition: all 0.2s linear;
+}
+
+.friends__item:hover {
+  background-color: #ffffff;
+}
+
+.friends__item:hover .button {
+  background: #fddcc4;
+}
+
+.friends__image {
+  height: 270px;
+}
+
+.friends__name {
+  font-family: "Georgia";
+  font-size: 20px;
+  line-height: 23px;
+  color: #545454;
+  letter-spacing: 0.06em;
+}
+
+.friends__more {
+  background: none;
+  border: 2px solid #f1cdb3;
+  margin-bottom: 29px;
+  padding: 15px 42px 12px;
+}
+
+.slider__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+.slider__button {
+  position: relative;
+  background: none;  
+  margin-left: 40px;
+  margin-right: 40px;
+  border: 2px solid #f1cdb3;
+  border-radius: 100px;
+  width: 52px;
+  height: 52px;
+  content: "";
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.4s linear;
+}
+
+.slider__button:hover {
+  background-color: #fddcc4;
+}
+
+.button__prev {
+  background-image: url(/images/arrow-prev.svg);
+}
+
+.button__next {
+  background-image: url(/images/arrow-next.svg);
+}
+
+.friends__button {
+  margin: auto;
+}
+
+.friends--pets {
+  .friends__wrapper {
+    padding-bottom: 96px;
+  }
+  .friends__slider {
+    flex-direction: column;
+  }
+  .friends__list {
+    flex-wrap: wrap;
+    gap: 28px 40px;
+  }
+
+  .friends__item {
+    gap: 30px;
+    opacity: 0;
+    animation-name: onFirstRender;
+    animation-iteration-count: 1;
+    animation-duration: .5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes onFirstRender {
+    0% {
+      opacity: 0;
+      transform: scale(0, 1);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+}
+
+  .pagination {
+    padding: 60px 0 0px;
+    display: flex;
+    justify-content: center;
+    gap: 17px;
+  }
+
+  .pagination__button {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #292929;
+    font-family: "Georgia";
+    font-style: normal;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+
+  .no-active {
+    border: 2px solid #cdcdcd;
+    color: #cdcdcd;
+    cursor:default;
+  }
+
+  .no-active:hover {
+    background-color: inherit;
+  }
+
+  .number__page {
+    background-color: #f1cdb3;
+    font-family: "Georgia";
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+  }
+
+  @media (max-width: 768px) {
+    .friends__wrapper {
+      gap: 30px;
+      padding-bottom: 75px;
+    }
+
+    .pagination {
+      padding-top: 40px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .friends__wrapper {
+      gap: 42px;
+      padding-bottom: 39px;
+    }
+
+    .friends__item:nth-child(2) {
+      display: flex;
+    }
+
+    .friends__item:nth-child(4),
+    .friends__item:nth-child(5),
+    .friends__item:nth-child(6) {
+      display: none;
+    }
+
+    .pagination {
+      padding-top: 45px;
+      gap: 6px;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .friends__slider__button {
+    position: relative;
+    
+  }
+
+  .friends__list {
+    flex-wrap: wrap;
+  }
+
+  .slider__buttons {
+    position: relative;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .friends__list {
+    gap: 40px;
+  }
+
+  .friends__wrapper {
+    width: 100%;
+    padding-top: 80px;
+  }
+
+  .slider__buttons {
+    position: absolute;
+    transform: translateY(-50%);
+  }
+
+  .slider__button {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+}
+
+@media (max-width: 765px) {
+  .slider__buttons {
+    position: relative;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 320px) {
+  .friends__wrapper {
+    padding: 42px 0;
+    gap: 42px;
+  }
+
+  .friends__slider__button {
+    position: relative;
+    padding-top: 19px;
+    gap: 21px;
+    justify-content: center;
+  }
+
+  .slider__buttons {
+    margin-top: 20px;
+    justify-content: center;
+    gap: 20px;
+  }
+
+
+
+
+}

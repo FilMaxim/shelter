@@ -1,0 +1,85 @@
+.help {
+  padding: 80px 0 40px;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.help__title {
+  max-width: 320px;
+  margin: auto;
+  text-align: center;
+}
+
+.help__list {
+  padding: 60px 127px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 55px 119px;
+}
+
+.help__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.help__name {
+  font-family: "Georgia";
+  font-size: 20px;
+  line-height: 115%;
+  color: #545454;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+
+  .help {
+    padding-top: 78px;
+
+  }
+
+  .help__list {
+    padding: 60px 69px;
+    gap:  55px 60px;
+  }
+
+  .help__item {
+    width: 170px;
+  }
+}
+
+@media (max-width: 320px) {
+  
+  .help {
+    padding: 42px 0 7px;
+  }
+
+  .help__list {
+    box-sizing: border-box;
+    padding: 36px 15px;
+    gap:  23px 30px;
+    justify-content: start;
+  }
+
+  .help__item {
+    width: 130px;
+    gap: 16px;
+  }
+
+  .help__name {
+    font-size: 15px;
+  }
+
+  .help__svg {
+    scale: 0.833;
+  }
+
+  .help__title {
+    padding: 0 30px;
+  }
+
+
+}

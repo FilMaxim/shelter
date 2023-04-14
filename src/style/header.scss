@@ -1,0 +1,193 @@
+.header {
+  position: relative;
+  max-width: 1280px;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: clip;
+}
+
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  align-items: center;
+}
+
+.header__title {
+  margin: 0;
+  font-family: "Georgia";
+  font-size: 32px;
+  line-height: 110%;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+}
+
+.header__subtitle {
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.header__list {
+  width: 443px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.header__burger-icon {
+  display: none;
+  padding: 0;
+  flex-direction: column;
+  gap: 8px;
+  background: aqua;
+  position: relative;
+  z-index: 20;
+  background: none;
+  border: none;
+  transition: 0.5s;
+}
+
+.header__burger--active {
+  transition: transform 0.5s;
+  transform: rotate(90deg);
+}
+
+.header__burger-icon:hover {
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin: 0px auto;
+  background-color: #f1cdb3;
+  transition: 0.3s;
+  border-radius: 1px;
+}
+
+.header__item--active {
+  color: #fafafa;
+  border-bottom: 3px solid #f1cdb3;
+  .header__link {
+    cursor: default;
+  }
+}
+
+.header__item--active .header__link {
+  color: #fafafa;
+}
+
+.header__link:hover {
+  color: #fafafa;
+}
+
+.header--pets {
+  background: #ffffff;
+
+  .header__title {
+    color: #545454;
+  }
+
+  .header__subtitle {
+    color: #292929;
+  }
+
+  .header__link {
+    color: #545454;
+  }
+
+  .header__item--active .header__link {
+    color: #292929;
+  }
+
+  .header__link:hover {
+    color: #292929;
+  }
+
+  .bar {
+    background-color: #000000;
+  }
+}
+
+@media (max-width: 770px) {
+  .header {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__list {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    background-color: #292929;
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transform: translateX(100%);
+    transition: 0.5s;
+    overflow: hidden;
+    .header__link {
+      font-size: 32px;
+    }
+  }
+
+  .header__list--active {
+    transform: translateX(0%);
+  }
+
+  .header__burger-icon {
+    display: flex;
+  }
+
+  .popup {
+    background-color: rgba(41, 41, 41, 0.6);
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    transform: translateX(100%);
+    top: 0;
+    z-index: 5;
+  }
+
+  .popup--active {
+    transform: translateX(0%);
+  }
+
+  .header--pets {
+    .header__list {
+      background-color: #fff;
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .header {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header {
+    padding: 30px 20px;
+  }
+}

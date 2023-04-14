@@ -1,0 +1,234 @@
+.modal__popap {
+    position: fixed;
+    width: 100vw;
+    top: 50%;
+    display: none;
+    transform: translateY(-50%);
+    z-index: 10;
+    transform: translateY(-50%);
+}
+
+@keyframes onModal {
+    0% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal--active {
+    display: block;
+    transform: scale(1);
+    transform: translateY(-50%);
+    animation-name: onModal;
+    animation-iteration-count: 1;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.modal__wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fafafa;
+    border-radius: 9px;
+    display: flex;
+    gap: 30px;
+    z-index: 10;
+}
+
+.modal__desc {
+    padding-top: 50px;
+}
+
+.modal__type {
+    font-family: "Georgia";
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.modal__span {
+    display: block;
+    font-family: "Georgia";
+    letter-spacing: 0.06em;
+    line-height: 110%;
+    color: #000000;
+    margin: 41px 0;
+    padding-right: 20px;
+}
+
+.modal__list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.modal__item {
+    position: relative;
+    font-family: "Georgia";
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    padding-left: 13px;
+    text-transform: capitalize;
+}
+
+.modal__item:before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #f1cdb3;
+}
+
+.modal__item span {
+    font-family: "Georgia";
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    text-transform: lowercase;
+}
+
+.modal__image {
+    max-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal__photo {
+    object-fit: contain;
+    width: clamp(350px, 50vw, 500px);
+}
+
+.modal__batton {
+    position: absolute;
+    right: -42px;
+    top: -52px;
+    background: #00000000;
+    border: 2px solid #f1cdb3;
+    border-radius: 100px;
+    width: 52px;
+    height: 52px;
+    content: "";
+    transition: all 0.4s linear;
+    &:hover {
+        background-color: #fddcc4;
+    }
+}
+
+.modal__batton:before,
+.modal__batton:after {
+    content: "";
+    width: 17px;
+    position: absolute;
+    top: 23px;
+    left: 16px;
+    right: 0;
+    height: 2px;
+    background: #000;
+    border-radius: 4px;
+}
+.modal__batton:before {
+    transform: rotate(45deg);
+}
+
+.modal__batton:after {
+    transform: rotate(-45deg);
+}
+
+.modal__fade {
+    background-color: rgba(41, 41, 41, 0.6);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    transform: scale(0);
+}
+
+.modal__fade--active {
+    transform: scale(1);
+}
+
+@media (max-width: 1020px) {
+    .modal__wrapper {
+        margin: 0 69px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal__wrapper {
+        gap: 11px;
+    }
+    .modal__desc {
+        padding-top: 10px;
+        padding-bottom: 11px;
+    }
+
+    .modal__span {
+        margin: 19px 0;
+        font-size: 13px;
+        padding-right: 4px;
+    }
+
+    .modal__list {
+        gap: 4px;
+    }
+    .modal__image {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 760px) {
+    .modal__wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal__desc {
+        text-align: center;
+    }
+
+    .modal__list {
+        text-align: left;
+    }
+}
+
+@media (max-width: 320px) {
+    .modal__wrapper {
+        max-width: 240px;
+        margin: 0 auto;
+    }
+    .modal__title {
+        font-size: 35px;
+    }
+
+    .modal__span {
+        text-align: justify;
+        padding: 0 10px;
+        margin: 20px 0;
+    }
+    .modal__image {
+        display: none;
+    }
+    .modal__batton {
+        right: -28px;
+    }
+    .modal__list {
+        padding-left: 11px;
+        gap: 5px;
+    }
+}
